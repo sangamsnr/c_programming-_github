@@ -1,49 +1,34 @@
-import org.w3c.dom.ls.LSOutput;
+package secondproject.java;
 
 public class Account {
+    //instance variable
+    String acc_name;
+    String acc_type;
+    double balance;
 
-        String accountNumber;
-        String accountName;
-        double balance;
-
-        public Account(String accountNumber, String accountName, double balance) {
-            this.accountNumber = accountNumber;
-            this.accountName = accountName;
-            this.balance = balance;
-        }
-
-
-        double balanceEnquiry() {
-            return this.balance;
-        }
-
-        public void deposit(double amount) {
-            this.balance+=amount;
-            System.out.println("deposit is sucessful:new balance is " + this.balance);
-        }
-        public void withdraw(double amount) {
-            if(amount > this.balance) {
-                System.out.println("balance insufficent");
-            }
-            else{
-                balance-=amount;
-                System.out.println("withdraw sucessful:new balance is " + balanceEnquiry());
-            }
-        }
-
-          public static void main(String[] args) {
-            // create and object of  account
-              
-
-
-          }
+    public Account(String acc_name, String acc_type, double balance) {
+        this.acc_name = acc_name;
+        this.acc_type = acc_type;
+        this.balance = balance;
     }
 
+    public double balanceEnquiry() {
+        return this.balance;
+    }
 
+    public void deposit(double amt){
+        this.balance +=amt;
+        System.out.println("Deposite successfull:New balance:"+ balanceEnquiry());
+    }
 
+        public void withdraw(double amt){
+            if(amt>this.balance) {
+                System.out.println("Sorry Insufficient balance");
+            }else{
+                    this.balance -= amt;
+                    System.out.println("Withdraw successfull: "+balanceEnquiry()) ;
 
-
-
-
-
-
+            }
+        }
+    
+}
